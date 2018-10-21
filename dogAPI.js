@@ -21,12 +21,10 @@
             breedName += data.message[i];
             i++;
         }
-        breedName = breedName.charAt(0).toUpperCase() + breedName.substr(1);
-        console.log(breedName);
-        console.log(data.message);        
+        breedName = breedName.charAt(0).toUpperCase() + breedName.substr(1);     
         
         
-        return obj = {
+        return {
             name: breedName,
             description: "Hopefully this " + breedName + " cheers you up!",
             picture: data.message
