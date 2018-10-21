@@ -36,7 +36,7 @@
       	feelings.push(this.innerText);
     	}
     	if (feelings.length == 5) {
-    		$("next").classList.remove("hidden");
+    		$("next-btn").classList.remove("hidden");
     	}
     }
   }
