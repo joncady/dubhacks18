@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito|Text+Me+One|Pontano+Sans');
+@import url('https://fonts.googleapis.com/css?family=Nunito|Text+Me+One|Krub');
 
 
 html {
@@ -6,50 +6,44 @@ html {
 	/* Source: "https://desktopwalls.net/nature/calm-mountain-lake-4k-ultra-hd-desktop-wallpaper" */
 	background-image: url(background.jpg);
 	background-size: cover;
-	overflow: scroll;
 }
 
 body {
 	background-color: #a5a5aab3;
-	width: 80%;
+	width: 70%;
 	height: 90%;
 	margin-left: auto;
 	margin-right: auto;
-	border-radius: 0.65em;
 	text-align: center;
+	border-radius: 0.45em;
 	font-family: 'Text Me One', sans-serif;
 }
 
-section{
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: center;
-}
-
-h1, h2 {
-	color: white;
+main {
+	margin-top: 3em;
 }
 
 h1 {
+	text-shadow: 0px 2px 16px black;
+	color: white;
 	font-size: 40pt;
 	padding: 1%;
-	font-family: 'Pontano Sans', sans-serif;
-	padding: 1%;
+	padding-top: 5%;
+	font-family: 'Krub', sans-serif;
 	margin-bottom: 0;
 }
 
 h2 {
+	color: #ffffff87;
 	margin: 0;
-	font-size: 20pt;
+	font-size: 15pt;
 	padding: 0;
 }
 
 .col {
-	background-color: #02010261 ;
-	border: solid;
+	background-color: #02010261;
 	color: white;
-	border-width: 0;
-	border-radius: 30%;
+	border-radius: .65em;
 	height: 1em;
 	width: 6em;
 	font-size: 15pt;
@@ -61,6 +55,8 @@ h2 {
 .col:hover, .selected {
 	background-color: #c4a4a5;
 	color: black;
+	cursor: pointer;
+	box-shadow: 0px 2px 10px black;
 }
 
 .hidden {
@@ -68,12 +64,6 @@ h2 {
 }
 
 #next-btn {
-	background-color: red;
-	width: 50%;
-	align-items: center;
-}
-
-#next-btn a {
-	text-decoration: none;
-	color: white;
+	background-color: green;
+	width: 5em;
 }
