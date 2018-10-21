@@ -3,9 +3,43 @@
 body {
 	margin-top: 0;
 	height: 100%;
+	background-size: cover;
+}
+.one {
 	/* Source: "https://desktopwalls.net/nature/calm-mountain-lake-4k-ultra-hd-desktop-wallpaper" */
 	background-image: url(../assets/background.jpg);
-	background-size: cover;
+	transition-timing-function: ease-in-out;
+	transition-delay: 1s;
+}
+
+.two {
+	background-image: url(../assets/purple.jpg);
+	transition-timing-function: ease-in-out;
+	transition-delay: 1s;
+}
+
+.two {
+	background-image: url(../assets/sea.jpg);
+	transition-timing-function: ease-in-out;
+	transition-delay: 1s;
+}
+
+.three {
+		background-image: url(../assets/northern.jpg);
+		transition-timing-function: ease-in-out;
+		transition-delay: 1s;
+}
+
+.four {
+	background-image: url(../assets/ocean.jpg);
+	transition-timing-function: ease-in-out;
+	transition-delay: 1s;
+}
+
+.five {
+	background-image: url(../assets/forest.jpg);
+	transition-timing-function: ease-in-out;
+	transition-delay: 1s;
 }
 
 #welcome {
