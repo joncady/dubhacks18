@@ -3,7 +3,6 @@
 // -- your description of what this file does here --
 //
 
-(function() {
   "use strict";
 
   let feelings = [];
@@ -14,17 +13,22 @@
   window.addEventListener("load", initialize);
 
   function initialize() {
+    if ($("#welcome").length > 0) {
+      let timer = setTimeout(function() { 
+        $("#welcome").fadeOut("slow"); 
+        $("#intro").fadeOut("slow");
+        clearTimeout(timer); 
+      }, 1500);
+    }
     let buttons = qsa(".col");
-    $("next-btn").addEventListener("click", saveSession);
+    $("#next-btn").click(saveSession);
     for (let i = 0; i < buttons.length; i++) {
       buttons[i].addEventListener("click", selected);
     }
-    $("next-btn").addEventListener("click", next);
   }
 
   function saveSession() {
-    let include = qs("h1").innerText;
-    console.log(include);
+    let include = qs("header h1").innerText;
     if (include.includes("feeling")) {
       for (let i = 0; i < feelings.length; i++) {
         sessionStorage.setItem("feeling" + i, feelings[i]);
@@ -42,7 +46,7 @@
     if (this.classList.contains("selected")) {
     	this.classList.remove("selected");
     	if (feelings.length == 5) {
-    		$("next-btn").classList.add("hidden");
+    		$("#next-btn").addClass("hidden");
     	}
     	let index = feelings.indexOf(this.innerText);
 			if (index > -1) {
@@ -54,7 +58,7 @@
       	feelings.push(this.innerText);
     	}
     	if (feelings.length == 5) {
-    		$("next-btn").classList.remove("hidden");
+    		$("#next-btn").fadeIn("slow");
     	}
     }
   }
@@ -79,9 +83,6 @@
    * @param {string} id - element ID
    * @returns {object} DOM object associated with id.
    */
-  function $(id) {
-    return document.getElementById(id);
-  }
 
   /**
    * Returns the first element that matches the given CSS selector.
@@ -100,5 +101,3 @@
   function qsa(query) {
     return document.querySelectorAll(query);
   }
-
-})();
