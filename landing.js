@@ -22,10 +22,19 @@
   }
 
   function saveSession() {
-    for (let i = 0; i < feelings.length; i++) {
-      sessionStorage.setItem("array" + i, feelings[i]);
+    let include = qs("h1").innerText;
+    console.log(include);
+    if (include.includes("feeling")) {
+      for (let i = 0; i < feelings.length; i++) {
+        sessionStorage.setItem("feeling" + i, feelings[i]);
+      }
+      window.location.href="interests.html";
+    } else {
+      for (let i = 0; i < feelings.length; i++) {
+        sessionStorage.setItem("interest" + i, feelings[i]);
+      }
+      window.location.href="main.html";
     }
-    window.location.href="interests.html";
   }
 
   function selected() {
