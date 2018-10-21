@@ -54,8 +54,11 @@ body {
 	margin: 0;
 }
 
-#background {
+.background-col {
 	background-color: #a5a5aab3;
+}
+
+#background {
 	width: 70%;
 	height: auto;
 	margin-left: auto;
@@ -160,19 +163,19 @@ h2 {
 }
 
 .blue {
-	background-color: #5d5dd7b3;
+	background-color: #8bd3d0ab;
 }
 
 .red {
-	background-color: #d75d84b3;
+	background-color: #d32e2e82;
 }
 
 .green {
-	background-color: #50e146b3;
+	background-color: #53d34a85;
 }
 
 .other {
-	background-color: #da57fa73;
+	background-color: #b358c97a;
 }
 
 @media (min-width: 600px) {

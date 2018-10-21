@@ -3,6 +3,9 @@
     const MEMESURL = "http://students.washington.edu/joncady/dubhacks/memes/memes.php";
     let background = 0;
     const photos = ["one", "two", "three", "four", "five"];
+    let sadFeels = ["sadness", "lonely", "upset", "disappointed", "ashamed"];
+    let happyFeels = ["hopeful", "happy", "proud", "confident"];
+    let otherFeels = ["confused", "anxious", "stressed", "afraid", "angry"];  
 
     window.onload = function () {
         /* Returns what options the user chose during the intro process */
@@ -10,6 +13,7 @@
         let userSpecifics = getSessions();
         callInterests(userSpecifics.slice(Math.max(userSpecifics.length - 5, 1)));
         setInterval(backgroundChange, 9000);
+        changeBackColor();
     };
 
     function backgroundChange(){
@@ -199,4 +203,29 @@
         })
     }
 
+    function changeBackColor() {
+        let feelings = getSessions();
+        let sadCount = 0;
+        let happyCount = 0;
+        let otherCount = 0;
+        for (let i = 0; i < 5; i++) {
+            if (sadFeels.includes(feelings[i])) {
+                sadCount++;
+            } else if (happyFeels.includes(feelings[i])) {
+                happyCount++;
+            } else if (otherFeels.includes(feelings[i])) {
+                otherCount++;
+            }
+        }
+        $("#background").removeClass("background-col");
+        if (sadCount > happyCount && sadCount > otherCount) {
+            $("#background").addClass("blue");
+        } else if (happyCount > sadCount && happyCount > otherCount) {
+            $("#background").addClass("green");
+        } else if (otherCount > sadCount && otherCount > happyCount) {
+            $("#background").addClass("red");
+        } else {
+            $("#background").addClass("other");
+        }
+    }
 })();
