@@ -68,7 +68,6 @@ button:hover {
 	margin: 0;
 }
 
-#background {
 	background-color: #a5a5aab3;
 	width: 70%;
 	height: auto;
@@ -176,19 +175,15 @@ h2 {
 }
 
 .blue {
-	background-color: #5d5dd7b3;
 }
 
 .red {
-	background-color: #d75d84b3;
 }
 
 .green {
-	background-color: #50e146b3;
 }
 
 .other {
-	background-color: #da57fa73;
 }
 
 @media (min-width: 600px) {
