@@ -18,11 +18,10 @@ body {
 }
 
 section{
-		display: flex;
-		flex-flow: row wrap;
-		justify-content: space-around;
-		align-items: flex-end;
-
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	align-items: flex-end;
 }
 
 h1 {
@@ -41,9 +40,14 @@ h2 {
 
 .col {
 	background-color: #aee5f0b8;
-	align-self: center;
+	border: solid;
+	border-width: 0;
+	border-radius: 30%;
+	height: 50px;
+	width: 25px;
+	margin: 20%;
 }
 
-.col:hover{
+.col:hover, .selected {
 	background-color: #9400eaa1;
 }
