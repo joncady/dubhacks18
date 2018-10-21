@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito|Text+Me+One|Krub');
+
+body {
+	margin-top: 0;
+	height: 100%;
+	/* Source: "https://desktopwalls.net/nature/calm-mountain-lake-4k-ultra-hd-desktop-wallpaper" */
+	background-image: url(../assets/background.jpg);
+	background-size: cover;
+}
+
+#welcome {
+	position: fixed;
+	background-color: #a5a5aab3;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: .98;
+	margin: 0;
+}
+
+#background {
+	background-color: #a5a5aab3;
+	width: 70%;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 2em;
+	text-align: center;
+	border-radius: 0.45em;
+	font-family: 'Text Me One', sans-serif;
+}
+
+main {
+	margin: 1em;
+}
+
+.hide {
+    display: none;
+}
+
+#intro {
+	position: fixed;
+	top: 100px;
+	text-align: center;
+	width: 100%;
+	padding-left: auto;
+	padding-right: auto;
+}
+
+h1 {
+	text-shadow: 0px 2px 16px black;
+	color: white;
+	font-size: 40pt;
+	padding: 1%;
+	padding-top: 5%;
+	font-family: 'Krub', sans-serif;
+	margin-bottom: 0;
+}
+
+h2 {
+	color: #ffffff87;
+	margin: 0;
+	font-size: 15pt;
+	padding: 0;
+}
+
+.col {
+	background-color: #02010261;
+	color: white;
+	border-radius: .65em;
+	height: 1em;
+	width: 6em;
+	font-size: 15pt;
+	padding: 1em;
+	margin: .75em;
+	display: inline-block;
+}
+
+.col:hover, .selected, #next-btn, #return {
+	background-color: #c4a4a5;
+	color: black;
+	cursor: pointer;
+	box-shadow: 0px 2px 10px black;
+}
+
+.hidden {
+	display: none;
+}
+
+#next-btn {
+	background-color: green;
+	font-size: 3em;
+	width: 5em;
+	border-radius: 4px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#content {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+
+.card {
+	margin: 1em;
+}
+
+#return img {
+	max-width: 100%;
+	max-height: auto;
+}
+
+#return {
+	position: fixed;
+	font-size: 1rem;
+	padding: .5em;
+	left: 10px;
+	bottom: 20px;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color: green;
+}
+
+
+
+@media (min-width: 600px) {
+	#return {
+		left: 50px;
+	}
+}

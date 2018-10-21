@@ -1,1 +1,0 @@
-let memeAPI = "2cb2db72-a1c9-4b34-ac4c-7c5ca48356b3";

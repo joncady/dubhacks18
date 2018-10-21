@@ -1,41 +1,34 @@
 (function () {
-    
+    const CARSURL = "http://students.washington.edu/joncady/dubhacks/cars/cars.php";
+    const MEMESURL = "http://students.washington.edu/joncady/dubhacks/memes/memes.php";
+
     window.onload = function () {      
+        /* Returns what options the user chose during the intro process */
+        $("#return").click(goHome);
+        let userSpecifics = getSessions();
+        console.log(userSpecifics);
         quoteGetter(); 
         getDog();
-        getImageFromFolder("http://students.washington.edu/joncady/dubhacks/cars/cars.php", "Look at this sexy ", false);
-        getImageFromFolder("http://students.washington.edu/joncady/dubhacks/memes/memes.php", "Consume this ", true);
+        getImageFromFolder(CARSURL, "Look at this sexy ", false);
+        getImageFromFolder(MEMESURL, "Consume this ", true);
+        getGaming();
     };
 
-    function randomIndex(arr) {
-        let randomIndex = Math.floor(Math.random() * arr.length);
-        console.log(randomIndex);
-        return randomIndex;
-    }
-
-    function processJSON(data) {
-        // JSON object properties:
-        // name
-        // short desc
-        // link to source
-        
-        console.log(data);
-
+    function processJSON(data) {        
         let div = document.createElement("div");
         let img = document.createElement("img");
         let div2 = document.createElement("div");
         let h5 = document.createElement("h5");
         let p = document.createElement("p");
-        let a = document.createElement("a");
+        // let a = document.createElement("a");
         
         div.classList.add("card");
         img.classList.add("card-img-top");
         div2.classList.add("card-body");
         h5.classList.add("card-title");
         p.classList.add("card-text");
-        a.classList.add("btn"); 
-        a.classList.add("btn-primary");
-        
+        // a.classList.add("btn"); 
+
         div.style.width = "18rem";
         
         h5.innerText = data.name;
@@ -47,12 +40,10 @@
         div.appendChild(div2);
         div2.appendChild(h5);
         div2.appendChild(p);
-        div2.appendChild(a);
-        
-        $("content").appendChild(div);
-        
-        
-        
+        // div2.appendChild(a);
+        div.classList.add("hide");
+        $("#content").append(div);
+        $(".card").fadeIn("slow");         
     }
     
     function quoteGetter( ) {
@@ -89,7 +80,6 @@
         }
         breedName = breedName.charAt(0).toUpperCase() + breedName.substr(1);     
         
-        
         processJSON({
             name: breedName,
             description: "Hopefully this " + breedName + " cheers you up!",
@@ -120,14 +110,17 @@
                 picture: response[randomIndex(response)]
             });
         })
-        
-        
-        
-        
     }
-    
-    function $(id) {
-        return document.getElementById(id);
+
+    function getGaming() {
+        let url = 'https://newsapi.org/v2/top-headlines?sources=ign&apiKey=b17dd488a89c483fa5065ae453e26a2f'
+        let req = new Request(url);
+        fetch(req).then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            processJSON(cleanGaming(data.articles));
+        });
     }
 
 })();
