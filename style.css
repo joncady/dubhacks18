@@ -1,37 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Anton|Text+Me+One');
+
 
 html {
 	background: linear-gradient(rgb(171, 234, 240), rgb(151, 5, 224));
 	height: 100%;
+
 }
 
 body {
 	background-color: #ffffff82;
-	margin-top: 80px;
+	margin-top: 10%;
 	width: 75%;
 	height: 75%;
 	margin-left: auto;
 	margin-right: auto;
 	border-radius: 0.65em;
-	text-align: center;
+	text-align: center;font-family: 'Text Me One', sans-serif;
 }
 
 h1 {
-	font-size: 40pt;
+	font-size: 30pt;
 	padding: 30px;
+	font-family: 'Anton', sans-serif;
+	padding: 1%;
 }
 
 h2 {
 	margin-bottom: 30px;
+	font-size: 15pt;
+	padding: 1%;
 }
 
 .row {
-	margin: 5px;
+	margin: 1%;
 }
 
 .col {
-
 	background-color: green;
-	margin: 20px;
-	padding: 10px;
+	margin: 1%;
+	padding: 1%;
 }
 
+.col:hover{
+	background-color: red;
+}
