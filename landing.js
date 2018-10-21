@@ -14,7 +14,10 @@
   window.addEventListener("load", initialize);
 
   function initialize() {
-    $("col").addEventListener("click", select);
+    let buttons = qsa(".col");
+    for (let i = 0; i < boxes.length; i++) {
+      buttons[i].addEventListener("click", selected);
+    }
   }
 
   function selected() {
