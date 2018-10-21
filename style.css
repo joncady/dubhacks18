@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Anton|Text+Me+One');
+@import url('https://fonts.googleapis.com/css?family=Righteous|Text+Me+One');
 
 
 html {
@@ -9,38 +9,41 @@ html {
 
 body {
 	background-color: #ffffff82;
-	margin-top: 10%;
-	width: 75%;
-	height: 75%;
+	width: 80%;
+	height: 90%;
 	margin-left: auto;
 	margin-right: auto;
 	border-radius: 0.65em;
 	text-align: center;font-family: 'Text Me One', sans-serif;
 }
 
+section{
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-around;
+		align-items: flex-end;
+
+}
+
 h1 {
 	font-size: 30pt;
-	padding: 30px;
-	font-family: 'Anton', sans-serif;
 	padding: 1%;
+	font-family: 'Righteous', sans-serif;
+	padding: 1%;
+	margin-bottom: 0;
 }
 
 h2 {
 	margin-bottom: 1%:;
 	font-size: 15pt;
-	padding: 1%;
-}
-
-.row {
-	margin: 1%;
+	padding: 0;
 }
 
 .col {
-	background-color: green;
-	margin: 1%;
-	padding: 1%;
+	background-color: #aee5f0b8;
+	align-self: center;
 }
 
 .col:hover{
-	background-color: red;
+	background-color: #9400eaa1;
 }
