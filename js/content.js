@@ -18,7 +18,9 @@
             },
             memes: function() {
                 getImageFromFolder(MEMESURL, "Consume this ", true);
-            }, reading: quoteGetter
+            }, 
+            quotes: quoteGetter,
+            cats: getCat
         }
         for (let i = 0; i < 15; i++) {
             interestFunctions[interestArray[randomIndex(interestArray)]]();
