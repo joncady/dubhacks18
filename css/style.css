@@ -89,12 +89,11 @@ h2 {
 }
 
 #next-btn {
-	background-color: green;
+	background: linear-gradient(rgba(198, 248, 201, 0.72), rgba(131, 45, 209, 0.68));
 	font-size: 3em;
-	width: 5em;
+	width: 4em;
 	border-radius: 4px;
 	margin-left: auto;
-	margin-right: auto;
 }
 
 #content {
@@ -121,7 +120,7 @@ h2 {
 	width: 50px;
 	height: 50px;
 	border-radius: 50%;
-	background-color: green;
+	background: linear-gradient(rgba(198, 248, 201, 0.72), rgba(131, 45, 209, 0.68));
 }
 
 
