@@ -192,8 +192,6 @@
                 })
                 .done(function (data) {
                     let picture = data.items[randomIndex(data.items)] ;
-                    console.log(picture);
-                    console.log(picture.title);
                     if (picture.title.length > 50) {
                         picture.title = picture.title.substr(0, picture.title.indexOf(" "));
                     }
