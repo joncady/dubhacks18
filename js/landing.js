@@ -6,7 +6,6 @@
   "use strict";
 
   let feelings = [];
-
   /**
    *  Initializes the page when the window is loaded
    */
@@ -14,10 +13,7 @@
 
   function initialize() {
     if ($("#welcome").length > 0) {
-      let timer = setTimeout(function() { 
-        $("#welcome").fadeOut("slow"); 
         $("#intro").fadeOut("slow");
-        clearTimeout(timer); 
       }, 1500);
     }
     let buttons = qsa(".col");
@@ -100,4 +96,3 @@
    */
   function qsa(query) {
     return document.querySelectorAll(query);
-  }
