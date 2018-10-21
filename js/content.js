@@ -13,13 +13,10 @@
         let userSpecifics = getSessions();
         callInterests(userSpecifics.slice(Math.max(userSpecifics.length - 5, 1)));
         setInterval(backgroundChange, 9000);
-<<<<<<< HEAD
         document.getElementById("feelMore").addEventListener("click", function(){
             callInterests(userSpecifics.slice(Math.max(userSpecifics.length - 5, 1)));
         });
-=======
         changeBackColor();
->>>>>>> color
     };
 
     function backgroundChange(){
@@ -64,7 +61,7 @@
                 flickrImage("artwork, art, masterpieces");
             }, 
             music: function () {
-                flickrImage("music, musician");
+                flickrImage("music, electronic music, rap");
             }, 
             coding: function () {
                 flickrImage("coding", "hacker");
