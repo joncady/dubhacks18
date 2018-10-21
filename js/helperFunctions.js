@@ -20,7 +20,6 @@ function randomIndex(arr) {
 }
 
 function cleanGaming(articles) {
-    console.log(articles);
     let index = randomIndex(articles);
     let object = { description: articles[index].description,
         name: articles[index].title,

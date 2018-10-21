@@ -7,6 +7,7 @@
         $("#return").click(goHome);
         let userSpecifics = getSessions();
         callInterests(userSpecifics.slice(Math.max(userSpecifics.length - 5, 1)));
+        
     };
 
     function callInterests (interestArray) {
@@ -20,7 +21,15 @@
                 getImageFromFolder(MEMESURL, "Consume this ", true);
             }, 
             quotes: quoteGetter,
-            cats: getCat
+            cats: function () {
+                flickrImage("cats, cute");
+            },    
+            outdoors: function () {
+                flickrImage("outdoors, nature");
+            },
+            sports: function () {
+                flickrImage("sports, baseball, football, soccer, boxing");
+            }
         }
         for (let i = 0; i < 15; i++) {
             interestFunctions[interestArray[randomIndex(interestArray)]]();
@@ -135,13 +144,36 @@
             processJSON(cleanGaming(data.articles));
         });
     }
+
+    function flickrImage(tag) {
+        var flickerAPI = "https://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+        $.getJSON(flickerAPI, {
+                    tags: tag,
+                    format: "json"
+                })
+                .done(function (data) {
+                    let picture = data.items[randomIndex(data.items)] ;    
+                    if (picture.title.length > 50) {
+                        picture.title = picture.title.substr(0, picture.title.indexOf(" "));
+                    }            
+                    console.log(picture.title);
+                    if (tag.includes(",")) {
+                        tag = tag.substr(0,tag.indexOf(","));
+                    }
+                    picture = { name: picture.title, picture: picture.media.m, description: "Here is a photo of " + tag };
+                    processJSON(picture);
+                });
+    }   
     
+    function jsonpCallback() {
+        console.log("hi");
+    }
+
     function getCat() {
         processJSON({
             name: "Cute Cat Gif",
             description: "Here's a cute cat!",
             picture: 'https://cataas.com/cat/gif'
-            
         })
     }
 
