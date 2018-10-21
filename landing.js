@@ -15,9 +15,17 @@
 
   function initialize() {
     let buttons = qsa(".col");
+    $("next-btn").addEventListener("click", saveSession);
     for (let i = 0; i < buttons.length; i++) {
       buttons[i].addEventListener("click", selected);
     }
+  }
+
+  function saveSession() {
+    for (let i = 0; i < feelings.length; i++) {
+      sessionStorage.setItem("array" + i, feelings[i]);
+    }
+    window.location.href="interests.html";
   }
 
   function selected() {
