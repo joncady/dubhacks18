@@ -3,22 +3,14 @@
     window.onload = function () {      
         quoteGetter(); 
         getDog();
+        getImageFromFolder("http://students.washington.edu/joncady/dubhacks/cars/cars.php", "Look at this sexy ", false);
+        getImageFromFolder("http://students.washington.edu/joncady/dubhacks/memes/memes.php", "Consume this ", true);
     };
 
-    function randomJSON(json) {
-        let randomIndex = Math.floor(Math.random() * json.length); 
-        return json[randomIndex];
-    }
-
-    function quoteGetter( ) {
-        let quote;
-        fetch("https://talaikis.com/api/quotes/random/").then( function (response) {
-            return response.json();
-        })
-        .then(function (data) {
-            quote = { name: data.author, description: data.quote };
-            processJSON(quote);
-        });
+    function randomIndex(arr) {
+        let randomIndex = Math.floor(Math.random() * arr.length);
+        console.log(randomIndex);
+        return randomIndex;
     }
 
     function processJSON(data) {
@@ -62,6 +54,17 @@
         
         
     }
+    
+    function quoteGetter( ) {
+        let quote;
+        fetch("https://talaikis.com/api/quotes/random/").then( function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            quote = { name: data.author, description: data.quote };
+            processJSON(quote);
+        });
+    }    
 
     function getDog() {
         fetch("https://dog.ceo/api/breeds/image/random", { mode: 'cors' })
@@ -92,6 +95,35 @@
             description: "Hopefully this " + breedName + " cheers you up!",
             picture: data.message
         });
+    }
+    
+    function getImageFromFolder(fetchURL, prompt, defaultInfo = true) {
+        var images = new Array();
+        fetch(fetchURL)
+            .then(function(response) {
+            return response.json();
+        })
+            .then(function(response) {
+            let filename = "";
+            let description = "";
+            if (!defaultInfo) {
+                filename = response[randomIndex(response)] + "";
+                filename = filename.substr(55);
+                filename = filename.replace(".jpg", "");
+                filename = filename.replace(".JPG", "");
+                description = prompt + filename + "!";
+            }
+
+            processJSON({
+                name: filename,
+                description: description, 
+                picture: response[randomIndex(response)]
+            });
+        })
+        
+        
+        
+        
     }
     
     function $(id) {
