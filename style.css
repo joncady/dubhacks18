@@ -1,0 +1,37 @@
+
+html {
+	background: linear-gradient(rgb(171, 234, 240), rgb(151, 5, 224));
+	height: 100%;
+}
+
+body {
+	background-color: #ffffff82;
+	margin-top: 80px;
+	width: 75%;
+	height: 75%;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 0.65em;
+	text-align: center;
+}
+
+h1 {
+	font-size: 40pt;
+	padding: 30px;
+}
+
+h2 {
+	margin-bottom: 30px;
+}
+
+.row {
+	margin: 5px;
+}
+
+.col {
+
+	background-color: green;
+	margin: 20px;
+	padding: 10px;
+}
+
