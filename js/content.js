@@ -41,6 +41,9 @@
             },
             sports: function () {
                 flickrImage("sports, baseball, football, soccer, boxing");
+            },
+            bananas: function () {
+                flickrImage("banana");
             }
         }
         for (let i = 0; i < 15; i++) {
