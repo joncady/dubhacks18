@@ -23,38 +23,42 @@ button:hover {
 .one {
 	/* Source: "https://desktopwalls.net/nature/calm-mountain-lake-4k-ultra-hd-desktop-wallpaper" */
 	background-image: url(../assets/background.jpg);
-	transition-timing-function: ease-in-out;
-	transition-delay: 1s;
+	background-size: cover;
 }
 
 .two {
 	background-image: url(../assets/purple.jpg);
 	transition-timing-function: ease-in-out;
 	transition-delay: 1s;
+	background-size: cover;
 }
 
 .two {
 	background-image: url(../assets/sea.jpg);
 	transition-timing-function: ease-in-out;
 	transition-delay: 1s;
+	background-size: cover;
 }
 
 .three {
 		background-image: url(../assets/northern.jpg);
 		transition-timing-function: ease-in-out;
 		transition-delay: 1s;
+		background-size: cover;
 }
 
 .four {
 	background-image: url(../assets/ocean.jpg);
 	transition-timing-function: ease-in-out;
 	transition-delay: 1s;
+	background-size: cover;
 }
 
 .five {
 	background-image: url(../assets/forest.jpg);
 	transition-timing-function: ease-in-out;
 	transition-delay: 1s;
+	background-size: cover;
 }
 
 #welcome {
