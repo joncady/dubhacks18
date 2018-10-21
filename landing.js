@@ -18,7 +18,12 @@
     for (let i = 0; i < buttons.length; i++) {
       buttons[i].addEventListener("click", selected);
     }
+    $("next-btn").addEventListener("click", next);
   }
+
+function next(){
+    window.location.href="interests.html";
+}
 
   function selected() {
     if (this.classList.contains("selected")) {

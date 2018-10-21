@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito|Text+Me+One');
+@import url('https://fonts.googleapis.com/css?family=Nunito|Text+Me+One|Pontano+Sans');
 
 
 html {
@@ -6,10 +6,11 @@ html {
 	/* Source: "https://desktopwalls.net/nature/calm-mountain-lake-4k-ultra-hd-desktop-wallpaper" */
 	background-image: url(background.jpg);
 	background-size: cover;
+	overflow: scroll;
 }
 
 body {
-	background-color: #030303bd;
+	background-color: #a5a5aab3;
 	width: 80%;
 	height: 90%;
 	margin-left: auto;
@@ -23,7 +24,6 @@ section{
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
-	align-content: center;
 }
 
 h1, h2 {
@@ -31,38 +31,49 @@ h1, h2 {
 }
 
 h1 {
-	font-size: 30pt;
+	font-size: 40pt;
 	padding: 1%;
-	font-family: 'Nunito', sans-serif;
+	font-family: 'Pontano Sans', sans-serif;
 	padding: 1%;
 	margin-bottom: 0;
 }
 
 h2 {
-	margin-top: 0;
-	margin-bottom: 1%:;
-	font-size: 15pt;
+	margin: 0;
+	font-size: 20pt;
 	padding: 0;
 }
 
 .col {
-	background-color: #7cd5e7ab;
+	background-color: #02010261 ;
 	border: solid;
+	color: white;
 	border-width: 0;
 	border-radius: 30%;
-	height: 3em;
-	width: 9em;
-	margin: 10px;
-	padding-top: 1.5em;
+	height: 1em;
+	width: 6em;
+	font-size: 15pt;
+	padding: 1em;
+	margin: .75em;
 	display: inline-block;
 }
 
 .col:hover, .selected {
-	background-color: #ecae6e94;
+	background-color: #c4a4a5;
+	color: black;
 }
 
-#
-
-.hidden{
+.hidden {
 	display: none;
+}
+
+#next-btn {
+	background-color: red;
+	width: 50%;
+	align-items: center;
+}
+
+#next-btn a {
+	text-decoration: none;
+	color: white;
 }
