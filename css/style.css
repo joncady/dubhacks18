@@ -68,7 +68,11 @@ button:hover {
 	margin: 0;
 }
 
+.background-col {
 	background-color: #a5a5aab3;
+}
+
+#background {
 	width: 70%;
 	height: auto;
 	margin-left: auto;
@@ -175,15 +179,19 @@ h2 {
 }
 
 .blue {
+	background-color: #8bd3d0ab;
 }
 
 .red {
+	background-color: #d32e2e82;
 }
 
 .green {
+	background-color: #53d34a85;
 }
 
 .other {
+	background-color: #b358c97a;
 }
 
 @media (min-width: 600px) {
