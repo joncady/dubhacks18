@@ -6,6 +6,8 @@
   "use strict";
 
   let feelings = [];
+  let background = 0;
+  const photos = ["one", "two", "three", "four", "five"];
   /**
    *  Initializes the page when the window is loaded
    */
@@ -13,7 +15,10 @@
 
   function initialize() {
     if ($("#welcome").length > 0) {
+      let timer = setTimeout(function() {
+        $("#welcome").fadeOut("slow");
         $("#intro").fadeOut("slow");
+        clearTimeout(timer);
       }, 1500);
     }
     let buttons = qsa(".col");
@@ -21,8 +26,18 @@
     for (let i = 0; i < buttons.length; i++) {
       buttons[i].addEventListener("click", selected);
     }
+    setInterval(backgroundChange, 9000);
   }
 
+  function backgroundChange(){
+    qs("body").classList.remove(photos[background]);
+    background++;
+    if(background == 5){
+      background = 0;
+    }
+    qs("body").classList.add(photos[background]);
+
+  }
   function saveSession() {
     let include = qs("header h1").innerText;
     if (include.includes("feeling")) {
@@ -96,3 +111,4 @@
    */
   function qsa(query) {
     return document.querySelectorAll(query);
+  }

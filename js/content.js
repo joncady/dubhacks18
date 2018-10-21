@@ -1,12 +1,25 @@
 (function () {
     const CARSURL = "http://students.washington.edu/joncady/dubhacks/cars/cars.php";
     const MEMESURL = "http://students.washington.edu/joncady/dubhacks/memes/memes.php";
+    let background = 0;
+    const photos = ["one", "two", "three", "four", "five"];
 
+    window.onload = function () {
         /* Returns what options the user chose during the intro process */
         $("#return").click(goHome);
         let userSpecifics = getSessions();
         callInterests(userSpecifics.slice(Math.max(userSpecifics.length - 5, 1)));
+        setInterval(backgroundChange, 9000);
     };
+
+    function backgroundChange(){
+      $("body").removeClass(photos[background]);
+      background++;
+      if(background == 5){
+        background = 0;
+      }
+      $("body").addClass(photos[background]);
+    }
 
     function callInterests (interestArray) {
         let interestFunctions = {
@@ -30,25 +43,42 @@
             },
             bananas: function () {
                 flickrImage("banana");
+            },
+            food: function () {
+                flickrImage("food, fruit, vegetables, cuisine");
+            },
+            photography: function () {
+                flickrImage("photography, photos");
+            }, 
+            art: function () {
+                flickrImage("artwork, art, masterpieces");
+            }, 
+            music: function () {
+                flickrImage("music, musician");
             }
+
         }
         for (let i = 0; i < 15; i++) {
             interestFunctions[interestArray[randomIndex(interestArray)]]();
         }
     }
 
+    function processJSON(data) {
         let div = document.createElement("div");
         let img = document.createElement("img");
         let div2 = document.createElement("div");
         let h5 = document.createElement("h5");
         let p = document.createElement("p");
         // let a = document.createElement("a");
+
         div.classList.add("card");
         img.classList.add("card-img-top");
         div2.classList.add("card-body");
         h5.classList.add("card-title");
+        p.classList.add("card-text");
 
         div.style.width = "18rem";
+
         h5.innerText = data.name;
         p.innerText = data.description;
         if (data.picture != null) {
@@ -61,7 +91,9 @@
         // div2.appendChild(a);
         div.classList.add("hide");
         $("#content").append(div);
+        $(".card").fadeIn("slow");
     }
+
     function quoteGetter( ) {
         let quote;
         fetch("https://talaikis.com/api/quotes/random/").then( function (response) {
@@ -71,6 +103,7 @@
             quote = { name: data.author, description: data.quote };
             processJSON(quote);
         });
+    }
 
     function getDog() {
         fetch("https://dog.ceo/api/breeds/image/random", { mode: 'cors' })
@@ -93,12 +126,15 @@
             breedName += data.message[i];
             i++;
         }
+        breedName = breedName.charAt(0).toUpperCase() + breedName.substr(1);
+
         processJSON({
             name: breedName,
             description: "Hopefully this " + breedName + " cheers you up!",
             picture: data.message
         });
     }
+
     function getImageFromFolder(fetchURL, prompt, defaultInfo = true) {
         var images = new Array();
         fetch(fetchURL)
@@ -119,6 +155,7 @@
 
             processJSON({
                 name: filename,
+                description: description,
                 picture: picture
             });
         })
@@ -142,17 +179,16 @@
                     format: "json"
                 })
                 .done(function (data) {
+                    let picture = data.items[randomIndex(data.items)] ;
                     if (picture.title.length > 50) {
                         picture.title = picture.title.substr(0, picture.title.indexOf(" "));
-                    console.log(picture.title);
+                    }
                     if (tag.includes(",")) {
                         tag = tag.substr(0,tag.indexOf(","));
                     }
                     picture = { name: picture.title, picture: picture.media.m, description: "Here is a photo of " + tag };
                     processJSON(picture);
                 });
-    function jsonpCallback() {
-        console.log("hi");
     }
 
     function getCat() {
