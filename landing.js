@@ -15,7 +15,7 @@
 
   function initialize() {
     let buttons = qsa(".col");
-    for (let i = 0; i < boxes.length; i++) {
+    for (let i = 0; i < buttons.length; i++) {
       buttons[i].addEventListener("click", selected);
     }
   }
