@@ -6,13 +6,24 @@
         /* Returns what options the user chose during the intro process */
         $("#return").click(goHome);
         let userSpecifics = getSessions();
-        console.log(userSpecifics);
-        quoteGetter(); 
-        getDog();
-        getImageFromFolder(CARSURL, "Look at this sexy ", false);
-        getImageFromFolder(MEMESURL, "Consume this ", true);
-        getGaming();
+        callInterests(userSpecifics.slice(Math.max(userSpecifics.length - 5, 1)));
     };
+
+    function callInterests (interestArray) {
+        let interestFunctions = {
+            dogs: getDog,
+            gaming: getGaming,
+            cars: function() {
+                getImageFromFolder(CARSURL, "Look at this sexy ", false);
+            },
+            memes: function() {
+                getImageFromFolder(MEMESURL, "Consume this ", true);
+            }, reading: quoteGetter
+        }
+        for (let i = 0; i < 15; i++) {
+            interestFunctions[interestArray[randomIndex(interestArray)]]();
+        }
+    }
 
     function processJSON(data) {        
         let div = document.createElement("div");
@@ -26,8 +37,7 @@
         img.classList.add("card-img-top");
         div2.classList.add("card-body");
         h5.classList.add("card-title");
-        p.classList.add("card-text");
-        // a.classList.add("btn"); 
+        p.classList.add("card-text"); 
 
         div.style.width = "18rem";
         
@@ -96,9 +106,10 @@
             .then(function(response) {
             let filename = "";
             let description = "";
+            let picture = response[randomIndex(response)];
             if (!defaultInfo) {
-                filename = response[randomIndex(response)] + "";
-                filename = filename.substr(55);
+                filename = picture + "";
+                filename = filename.substr(53);
                 filename = filename.replace(".jpg", "");
                 filename = filename.replace(".JPG", "");
                 description = prompt + filename + "!";
@@ -107,7 +118,7 @@
             processJSON({
                 name: filename,
                 description: description, 
-                picture: response[randomIndex(response)]
+                picture: picture
             });
         })
     }
