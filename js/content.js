@@ -10,6 +10,9 @@
         let userSpecifics = getSessions();
         callInterests(userSpecifics.slice(Math.max(userSpecifics.length - 5, 1)));
         setInterval(backgroundChange, 9000);
+        document.getElementById("feelMore").addEventListener("click", function(){
+            callInterests(userSpecifics.slice(Math.max(userSpecifics.length - 5, 1)));
+        });
     };
 
     function backgroundChange(){

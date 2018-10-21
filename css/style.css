@@ -6,6 +6,15 @@ body {
 	background-size: cover;
 }
 
+button {
+	background: linear-gradient(rgba(255, 255, 255, 0.72), rgba(140, 140, 140, 0.66));
+	font-size: 25pt;
+	width: auto;
+	border-radius: 4px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .one {
 	/* Source: "https://desktopwalls.net/nature/calm-mountain-lake-4k-ultra-hd-desktop-wallpaper" */
 	background-image: url(../assets/background.jpg);
