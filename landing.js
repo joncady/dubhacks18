@@ -15,15 +15,28 @@
 
   function initialize() {
     let buttons = qsa(".col");
+    $("next-btn").addEventListener("click", saveSession);
     for (let i = 0; i < buttons.length; i++) {
       buttons[i].addEventListener("click", selected);
     }
     $("next-btn").addEventListener("click", next);
   }
 
-function next(){
-    window.location.href="interests.html";
-}
+  function saveSession() {
+    let include = qs("h1").innerText;
+    console.log(include);
+    if (include.includes("feeling")) {
+      for (let i = 0; i < feelings.length; i++) {
+        sessionStorage.setItem("feeling" + i, feelings[i]);
+      }
+      window.location.href="interests.html";
+    } else {
+      for (let i = 0; i < feelings.length; i++) {
+        sessionStorage.setItem("interest" + i, feelings[i]);
+      }
+      window.location.href="main.html";
+    }
+  }
 
   function selected() {
     if (this.classList.contains("selected")) {
