@@ -23,12 +23,12 @@
   function selected() {
     if (this.classList.contains("selected")) {
     	this.classList.remove("selected");
-    	var index = array.indexOf(this.innerText);
+    	let index = feelings.indexOf(this.innerText);
 			if (index > -1) {
   			feelings.splice(index, 1);
   		}
     } else {
-    	if (feelings.push() < 5) {
+    	if (feelings.length < 5) {
     		this.classList.add("selected");
       	feelings.push(this.innerText);
     	}
