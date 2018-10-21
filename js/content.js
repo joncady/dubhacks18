@@ -45,7 +45,7 @@
                 flickrImage("sports, baseball, football, soccer, boxing");
             },
             bananas: function () {
-                flickrImage("banana");
+                flickrImage("bananas");
             },
             food: function () {
                 flickrImage("food, fruit, vegetables, cuisine");
@@ -58,8 +58,13 @@
             }, 
             music: function () {
                 flickrImage("music, musician");
+            }, 
+            coding: function () {
+                flickrImage("coding", "hacker");
+            },
+            astrology: function () {
+                flickrImage("atrology");
             }
-
         }
         for (let i = 0; i < 15; i++) {
             interestFunctions[interestArray[randomIndex(interestArray)]]();
@@ -183,6 +188,8 @@
                 })
                 .done(function (data) {
                     let picture = data.items[randomIndex(data.items)] ;
+                    console.log(picture);
+                    console.log(picture.title);
                     if (picture.title.length > 50) {
                         picture.title = picture.title.substr(0, picture.title.indexOf(" "));
                     }
