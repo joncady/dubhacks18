@@ -122,5 +122,14 @@
             processJSON(cleanGaming(data.articles));
         });
     }
+    
+    function getCat() {
+        processJSON({
+            name: "Cute Cat Gif",
+            description: "Here's a cute cat!",
+            picture: 'https://cataas.com/cat/gif'
+            
+        })
+    }
 
 })();
