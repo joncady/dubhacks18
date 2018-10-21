@@ -23,6 +23,9 @@
   function selected() {
     if (this.classList.contains("selected")) {
     	this.classList.remove("selected");
+    	if (feelings.length == 5) {
+    		$("next").classList.add("hidden");
+    	}
     	let index = feelings.indexOf(this.innerText);
 			if (index > -1) {
   			feelings.splice(index, 1);
@@ -31,6 +34,9 @@
     	if (feelings.length < 5) {
     		this.classList.add("selected");
       	feelings.push(this.innerText);
+    	}
+    	if (feelings.length == 5) {
+    		$("next").classList.remove("hidden");
     	}
     }
   }
