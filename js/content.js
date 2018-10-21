@@ -9,19 +9,19 @@
         $("#return").click(goHome);
         let userSpecifics = getSessions();
         callInterests(userSpecifics.slice(Math.max(userSpecifics.length - 5, 1)));
-        setInterval(backgroundChange, 2000);
+        setInterval(backgroundChange, 9000);
     };
 
     function backgroundChange(){
-      qs("body").classList.remove(photos[background]);
+      $("body").removeClass(photos[background]);
       background++;
       if(background == 5){
         background = 0;
       }
-      qs("body").classList.add(photos[background]);
+      $("body").addClass(photos[background]);
 
     }
-    
+
     function callInterests (interestArray) {
         let interestFunctions = {
             dogs: getDog,

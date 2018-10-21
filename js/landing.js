@@ -26,7 +26,7 @@
     for (let i = 0; i < buttons.length; i++) {
       buttons[i].addEventListener("click", selected);
     }
-    setInterval(backgroundChange, 2000);
+    setInterval(backgroundChange, 9000);
   }
 
   function backgroundChange(){
