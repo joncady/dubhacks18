@@ -3,7 +3,6 @@
 body {
 	margin-top: 0;
 	height: 100%;
-	background-size: cover;
 }
 
 button {
@@ -20,41 +19,21 @@ button:hover {
     transform: scale(1.1); 
 }
 
-.one {
+.basic {
 	/* Source: "https://desktopwalls.net/nature/calm-mountain-lake-4k-ultra-hd-desktop-wallpaper" */
 	background-image: url(../assets/background.jpg);
-	background-repeat: repeat;
-	background-size: 100% auto;
+	background-size: auto 100%;
+	background-position: center;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+	position: fixed;
+	z-index: -1;
 }
 
-.two {
-	background-image: url(../assets/purple.jpg);
-	background-repeat: repeat;
-	background-size: 100% auto;
-}
-
-.two {
-	background-image: url(../assets/sea.jpg);
-	background-repeat: repeat;
-	background-size: 100% auto;
-}
-
-.three {
-		background-image: url(../assets/northern.jpg);
-		background-repeat: repeat;
-		background-size: 100% auto;
-}
-
-.four {
-	background-image: url(../assets/ocean.jpg);
-	background-repeat: repeat;
-	background-size: 100% auto;
-}
-
-.five {
-	background-image: url(../assets/forest.jpg);
-	background-repeat: repeat;
-	background-size: 100% auto;
+#image {
+	transition: background 1s linear;
 }
 
 #welcome {
@@ -72,8 +51,8 @@ button:hover {
 	background-color: #a5a5aab3;
 }
 
+/* don't touch*/
 #background {
-	width: 70%;
 	height: auto;
 	margin-left: auto;
 	margin-right: auto;
@@ -81,10 +60,23 @@ button:hover {
 	text-align: center;
 	border-radius: 0.45em;
 	font-family: 'Text Me One', sans-serif;
+	width: 70%;
 }
 
-main {
+#main {
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 2em;
+	text-align: center;
+	border-radius: 0.45em;
+	font-family: 'Text Me One', sans-serif;
+	width: 70%;
+}
+
+#questions {
 	margin: 1em;
+	height: auto;
 }
 
 .hide {
@@ -186,6 +178,10 @@ h2 {
 	background-color: #d32e2e82;
 }
 
+#show-content {
+	width: 70%;
+}
+
 .green {
 	background-color: #53d34a85;
 }
@@ -196,6 +192,25 @@ h2 {
 
 @media (min-width: 600px) {
 	#return {
-		left: 50px;
+		left: 60px;
+	}
+
+	#background {
+		margin-top: 1em;
+	}
+
+	#main {
+		margin-top: 0em;
+		width: 85%;
+	}
+}
+
+@media (min-width: 1280px) {
+	.basic {
+		background-size: 100vw auto;
+	}
+
+	main {
+		height: auto;
 	}
 }

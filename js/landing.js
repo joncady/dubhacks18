@@ -6,8 +6,8 @@
   "use strict";
 
   let feelings = [];
-  let background = 0;
-  const photos = ["one", "two", "three", "four", "five"];
+  let index = 0;
+  const PHOTOS = ["purple.jpg", "sea.jpg", "forest.jpg", "ocean.jpg", "northern.jpg", "background.jpg"];
   /**
    *  Initializes the page when the window is loaded
    */
@@ -26,18 +26,17 @@
     for (let i = 0; i < buttons.length; i++) {
       buttons[i].addEventListener("click", selected);
     }
-    setInterval(backgroundChange, 3000);
+    //setInterval(backgroundChange, 9000);
   }
 
   function backgroundChange(){
-    qs("body").classList.remove(photos[background]);
-    background++;
-    if(background == 5){
-      background = 0;
+    $('body').css({'background': 'url(./assets/' + PHOTOS[index] + ')', 'background-size': '100% auto'});
+    index++;
+    if(index == PHOTOS.length){
+      index = 0;
     }
-    qs("body").classList.add(photos[background]);
-
   }
+
   function saveSession() {
     let include = qs("header h1").innerText;
     if (include.includes("feeling")) {

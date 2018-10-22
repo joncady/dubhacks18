@@ -1,8 +1,8 @@
 (function () {
     const CARSURL = "http://students.washington.edu/joncady/dubhacks/cars/cars.php";
     const MEMESURL = "http://students.washington.edu/joncady/dubhacks/memes/memes.php";
-    let background = 0;
-    const photos = ["one", "two", "three", "four", "five"];
+    let index = 0;
+    const PHOTOS = ["purple.jpg", "sea.jpg", "forest.jpg", "ocean.jpg", "northern.jpg", "background.jpg"];
     let sadFeels = ["sadness", "lonely", "upset", "disappointed", "ashamed"];
     let happyFeels = ["hopeful", "happy", "proud", "confident"];
     let otherFeels = ["confused", "anxious", "stressed", "afraid", "angry"];  
@@ -12,7 +12,7 @@
         $("#return").click(goHome);
         let userSpecifics = getSessions();
         callInterests(userSpecifics.slice(Math.max(userSpecifics.length - 5, 1)));
-        setInterval(backgroundChange, 9000);
+        //setInterval(backgroundChange, 9000);
         document.getElementById("feelMore").addEventListener("click", function(){
             callInterests(userSpecifics.slice(Math.max(userSpecifics.length - 5, 1)));
         });
@@ -20,12 +20,11 @@
     };
 
     function backgroundChange(){
-      $("body").removeClass(photos[background]);
-      background++;
-      if(background == 5){
-        background = 0;
-      }
-      $("body").addClass(photos[background]);
+        $('body').css({'background': 'url(./assets/' + PHOTOS[index] + ')', 'background-size': '100% auto'});
+        index++;
+        if(index == PHOTOS.length){
+          index = 0;
+        }
     }
 
     function callInterests (interestArray) {
@@ -201,14 +200,6 @@
                     picture = { name: picture.title, picture: picture.media.m, description: "Here is a photo of " + tag };
                     processJSON(picture);
                 });
-    }
-
-    function getCat() {
-        processJSON({
-            name: "Cute Cat Gif",
-            description: "Here's a cute cat!",
-            picture: 'https://cataas.com/cat/gif'
-        })
     }
 
     function changeBackColor() {
